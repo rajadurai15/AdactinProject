@@ -1,0 +1,46 @@
+package com.alert;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Window_Handling {
+
+	public static void main(String[] args) throws AWTException {
+
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\91729\\eclipse-workspace\\Selenium_Project\\Java_Driver\\chromedriver.exe");
+			
+			WebDriver driver = new ChromeDriver();
+			
+			driver.get("https://www.amazon.in/");
+			
+			driver.manage().window().maximize();
+			
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
+			
+			Actions a =  new Actions(driver);
+			
+			WebElement mini = driver.findElement(By.xpath("//a[text()='Amazon miniTV']"));
+			
+			a.contextClick(mini).build().perform();
+			
+			Robot b = new Robot();
+			
+			b.keyPress(KeyEvent.VK_DOWN);
+			b.keyRelease(KeyEvent.VK_DOWN);
+			b.keyPress(KeyEvent.VK_ENTER);
+			
+			
+			
+			
+	}
+
+}

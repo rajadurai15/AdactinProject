@@ -1,0 +1,9 @@
+Feature: Hotel Booking In Adactin Application
+@smokeTest
+Scenario: User Login In The Web Application
+Given user Launch The Url In Adactin Application
+When user Enter The Username In The Username Field
+And user Enter The Password In The Password Field
+Then user Click The Login Button And It Navigate To Search Hotel Page
+
+

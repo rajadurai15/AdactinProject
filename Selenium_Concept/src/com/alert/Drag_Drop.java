@@ -1,0 +1,38 @@
+package com.alert;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Drag_Drop {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\91729\\eclipse-workspace\\Selenium_Concept\\Java_Driver\\chromedriver.exe ");
+
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://demo.automationtesting.in/Static.html");
+
+		driver.manage().window().maximize();
+
+		Actions at = new Actions(driver);
+
+		WebElement drag = driver.findElement(By.xpath("//img[@id='angular']"));
+
+		WebElement drop = driver.findElement(By.xpath("//div[@id='droparea']"));
+
+		at.dragAndDrop(drag, drop).build().perform();
+
+		WebElement drag1 = driver.findElement(By.xpath(" //img[@id='mongo']"));
+
+		WebElement drop1 = driver.findElement(By.xpath("//div[@id='droparea']"));
+
+		at.dragAndDrop(drag1, drop1).build().perform();
+
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.java1;
+
+public class If_Else {
+
+	public static void main(String[] args) {
+		
+		int i = 16;
+		 
+		if (i<18) {
+			System.out.println("eligible to vote");
+			
+		}
+		
+	if (i>18) {
+		System.out.println("not eligible to vote");
+		
+	} else {
+		System.out.println("invalid");
+
+	}
+			
+		}
+
+	}
+
+

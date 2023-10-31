@@ -1,0 +1,9 @@
+package com.adactin.stepdefinition;
+
+public class StepDefinition {
+
+	public static void main(String[] args) {
+
+	}
+
+}

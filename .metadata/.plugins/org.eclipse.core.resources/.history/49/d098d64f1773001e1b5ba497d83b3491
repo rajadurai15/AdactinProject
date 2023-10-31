@@ -1,0 +1,45 @@
+package com.alert;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Absolute_Xpath {
+
+	public static void main(String[] args) throws IOException {
+		
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\91729\\eclipse-workspace\\Selenium_Project\\Java_Driver\\chromedriver.exe");
+			
+			WebDriver driver = new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			
+			driver.get("https://in.linkedin.com/?original_referer=https%3A%2F%2Fwww.google.com%2F");
+			
+			driver.findElement(By.xpath("/html/body/main/section/div/div/form/div/div/div/div/input")).sendKeys("rajadurai");
+			
+			driver.findElement(By.xpath("/html/body/main/section/div/div/form/div/div[2]/div/div/input")).sendKeys("rajadurai12");
+			
+			driver.findElement(By.xpath("/html/body/main/section/div/div/form/div[2]/button")).click();
+			
+			TakesScreenshot t = (TakesScreenshot) driver;
+			
+			File src = t.getScreenshotAs(OutputType.FILE);
+			File Des = new File("C:\\Users\\91729\\eclipse-workspace\\Selenium_Concept\\Screen_Shot\\linked.png");
+			FileHandler.copy(src, Des);
+			
+			
+			
+			
+		
+		
+
+	}
+
+}
